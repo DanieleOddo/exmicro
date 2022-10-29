@@ -1,0 +1,4 @@
+2022-10-29 18:20:46,956 INFO org.springframework.boot.StartupInfoLogger [main] Starting SmokeTest using Java 11.0.16 on dev with PID 6127 (started by dev in /home/dev/Projects/exmicro/accounts-srv)
+2022-10-29 18:20:46,959 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.7.5, Spring v5.3.23
+2022-10-29 18:20:46,961 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-10-29 18:20:49,084 INFO org.springframework.boot.StartupInfoLogger [main] Started SmokeTest in 2.516 seconds (JVM running for 3.443)
