@@ -1,16 +1,26 @@
-2022-10-29 19:05:59,126 INFO o.s.b.StartupInfoLogger [main] Starting AccountsSrvApplication using Java 11.0.16 on dev with PID 4611 (/home/dev/Projects/exmicro/accounts-srv/target/classes started by dev in /home/dev/Projects/exmicro/accounts-srv)
-2022-10-29 19:05:59,132 DEBUG o.s.b.StartupInfoLogger [main] Running with Spring Boot v2.7.5, Spring v5.3.23
-2022-10-29 19:05:59,134 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
-2022-10-29 19:05:59,746 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2022-10-29 19:05:59,762 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
-2022-10-29 19:05:59,763 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
-2022-10-29 19:05:59,764 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.68]
-2022-10-29 19:05:59,844 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2022-10-29 19:05:59,845 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 676 ms
-2022-10-29 19:06:00,385 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
-2022-10-29 19:06:00,402 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2022-10-29 19:06:00,412 INFO o.s.b.StartupInfoLogger [main] Started AccountsSrvApplication in 1.598 seconds (JVM running for 2.06)
-2022-10-29 19:06:08,096 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-10-29 19:06:08,097 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
-2022-10-29 19:06:08,099 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 1 ms
-2022-10-29 19:06:08,113 INFO a.o.c.a.CreateAccountController [http-nio-8080-exec-1] Ciao Daniele
+2022-10-29 19:10:43,247 INFO o.s.b.StartupInfoLogger [main] Starting SmokeTest using Java 11.0.16 on dev with PID 7578 (started by dev in /home/dev/Projects/exmicro/accounts-srv)
+2022-10-29 19:10:43,254 DEBUG o.s.b.StartupInfoLogger [main] Running with Spring Boot v2.7.5, Spring v5.3.23
+2022-10-29 19:10:43,257 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-10-29 19:10:45,267 INFO o.s.b.StartupInfoLogger [main] Started SmokeTest in 2.426 seconds (JVM running for 3.578)
+2022-10-29 19:10:45,611 INFO o.s.t.c.s.AbstractTestContextBootstrapper [main] Neither @ContextConfiguration nor @ContextHierarchy found for test class [acme.oddo.controllers.account.CreateAccountControllerTest], using SpringBootContextLoader
+2022-10-29 19:10:45,613 INFO o.s.t.c.s.AbstractContextLoader [main] Could not detect default resource locations for test class [acme.oddo.controllers.account.CreateAccountControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2022-10-29 19:10:45,613 INFO o.s.t.c.s.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [acme.oddo.controllers.account.CreateAccountControllerTest]: CreateAccountControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2022-10-29 19:10:45,620 INFO o.s.b.t.c.SpringBootTestContextBootstrapper [main] Found @SpringBootConfiguration acme.oddo.AccountsSrvApplication for test class acme.oddo.controllers.account.CreateAccountControllerTest
+2022-10-29 19:10:45,622 INFO o.s.t.c.s.AbstractTestContextBootstrapper [main] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2022-10-29 19:10:45,624 INFO o.s.t.c.s.AbstractTestContextBootstrapper [main] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@53ba1175, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@cd5ff55, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@6003220a, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@16b64a03, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@1584c019, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3688baab, org.springframework.test.context.event.EventPublishingTestExecutionListener@4fe2dd02, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@6ba060af, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@5817f1ca, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@2b395581, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@726a8729, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@1a2724d3, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@7dd91ffc]
+2022-10-29 19:10:45,672 INFO o.s.b.StartupInfoLogger [main] Starting CreateAccountControllerTest using Java 11.0.16 on dev with PID 7578 (started by dev in /home/dev/Projects/exmicro/accounts-srv)
+2022-10-29 19:10:45,674 DEBUG o.s.b.StartupInfoLogger [main] Running with Spring Boot v2.7.5, Spring v5.3.23
+2022-10-29 19:10:45,675 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-10-29 19:10:46,127 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 0 (http)
+2022-10-29 19:10:46,137 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-auto-1"]
+2022-10-29 19:10:46,139 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2022-10-29 19:10:46,140 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-10-29 19:10:46,246 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2022-10-29 19:10:46,246 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 567 ms
+2022-10-29 19:10:46,792 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-auto-1"]
+2022-10-29 19:10:46,816 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 39751 (http) with context path ''
+2022-10-29 19:10:46,822 INFO o.s.b.StartupInfoLogger [main] Started CreateAccountControllerTest in 1.193 seconds (JVM running for 5.133)
+2022-10-29 19:10:46,925 INFO o.a.j.l.DirectJDKLog [http-nio-auto-1-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-29 19:10:46,926 INFO o.s.w.s.FrameworkServlet [http-nio-auto-1-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-10-29 19:10:46,929 INFO o.s.w.s.FrameworkServlet [http-nio-auto-1-exec-1] Completed initialization in 2 ms
+2022-10-29 19:10:46,956 INFO a.o.c.a.CreateAccountController [http-nio-auto-1-exec-1] Ciao Daniele
