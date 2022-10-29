@@ -1,0 +1,16 @@
+2022-10-29 19:05:59,126 INFO o.s.b.StartupInfoLogger [main] Starting AccountsSrvApplication using Java 11.0.16 on dev with PID 4611 (/home/dev/Projects/exmicro/accounts-srv/target/classes started by dev in /home/dev/Projects/exmicro/accounts-srv)
+2022-10-29 19:05:59,132 DEBUG o.s.b.StartupInfoLogger [main] Running with Spring Boot v2.7.5, Spring v5.3.23
+2022-10-29 19:05:59,134 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-10-29 19:05:59,746 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2022-10-29 19:05:59,762 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2022-10-29 19:05:59,763 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2022-10-29 19:05:59,764 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-10-29 19:05:59,844 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2022-10-29 19:05:59,845 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 676 ms
+2022-10-29 19:06:00,385 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2022-10-29 19:06:00,402 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-29 19:06:00,412 INFO o.s.b.StartupInfoLogger [main] Started AccountsSrvApplication in 1.598 seconds (JVM running for 2.06)
+2022-10-29 19:06:08,096 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-29 19:06:08,097 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-10-29 19:06:08,099 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 1 ms
+2022-10-29 19:06:08,113 INFO a.o.c.a.CreateAccountController [http-nio-8080-exec-1] Ciao Daniele

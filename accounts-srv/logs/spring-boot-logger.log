@@ -2,3 +2,19 @@
 2022-10-29 18:20:46,959 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.7.5, Spring v5.3.23
 2022-10-29 18:20:46,961 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
 2022-10-29 18:20:49,084 INFO org.springframework.boot.StartupInfoLogger [main] Started SmokeTest in 2.516 seconds (JVM running for 3.443)
+2022-10-29 18:53:01,341 INFO org.springframework.boot.StartupInfoLogger [main] Starting AccountsSrvApplication using Java 11.0.16 on dev with PID 29420 (/home/dev/Projects/exmicro/accounts-srv/target/classes started by dev in /home/dev/Projects/exmicro/accounts-srv)
+2022-10-29 18:53:01,342 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.7.5, Spring v5.3.23
+2022-10-29 18:53:01,343 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-10-29 18:53:02,005 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2022-10-29 18:53:02,015 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2022-10-29 18:53:02,016 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2022-10-29 18:53:02,017 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-10-29 18:53:02,084 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2022-10-29 18:53:02,084 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 700 ms
+2022-10-29 18:53:02,570 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2022-10-29 18:53:02,586 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-29 18:53:02,597 INFO org.springframework.boot.StartupInfoLogger [main] Started AccountsSrvApplication in 1.592 seconds (JVM running for 1.817)
+2022-10-29 18:53:09,514 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-29 18:53:09,517 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-10-29 18:53:09,519 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 1 ms
+2022-10-29 18:54:24,337 INFO org.springdoc.api.AbstractOpenApiResource [http-nio-8080-exec-5] Init duration for springdoc-openapi is: 90 ms
