@@ -32,9 +32,7 @@ public class TransactionRepositoryTest {
         TransactionEntity transaction = new TransactionEntity();
         transaction.setAccountID(1);
         BigDecimal bdFromString = new BigDecimal("10.12");
-        BigDecimal bdFromStringZero = new BigDecimal("0");
-        transaction.setDepositValue(bdFromString);
-        transaction.setInvoiceValue(bdFromStringZero);
+        transaction.setImpValue(bdFromString);
         transaction = repository.save(transaction);
         assertThat(transaction).hasFieldOrPropertyWithValue("accountID", 1);            
     }    

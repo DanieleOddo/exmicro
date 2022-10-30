@@ -38,16 +38,12 @@ public class TransactionEntity {
     @CreationTimestamp
     private LocalDateTime createOn;
     
-    @Column(name = "invoice_imp")
-    private BigDecimal invoiceValue;
-
-    @Column(name = "deposit_imp")
-    private BigDecimal depositValue; 
+    @Column(name = "imp_value")
+    private BigDecimal impValue;
 
     @PrePersist
     @PreUpdate
     public void precisionConvertion() {
-        this.invoiceValue.setScale(2, RoundingMode.HALF_UP);
-        this.depositValue.setScale(2, RoundingMode.HALF_UP);
+        this.impValue.setScale(2, RoundingMode.HALF_UP);
     }
 }

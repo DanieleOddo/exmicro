@@ -14,11 +14,8 @@ import acme.oddo.data.entities.TransactionEntity;
 public interface TransactionRepository extends CrudRepository<TransactionEntity, Integer>{
 
 
-    @Query(value = "SELECT sum(invoiceValue) FROM Transaction WHERE accountID = :accountID", nativeQuery = true)
-    public BigDecimal getSumInvoiceValue(@Param("accountID") Integer accountID);
-
-    @Query(value = "SELECT sum(depositValue) FROM Transaction WHERE accountID = :accountID", nativeQuery = true)
-    public BigDecimal getSumDepoitValue(@Param("accountID") Integer accountID);
+    @Query(value = "SELECT sum(impValue) FROM Transaction WHERE accountID = :accountID", nativeQuery = true)
+    public BigDecimal getBalanceValue(@Param("accountID") Integer accountID);
 
     public List<TransactionEntity> findAllByAccountID(Integer accountID);    
     
