@@ -1,2 +1,6 @@
+acme/oddo/data/repositories/AccountRepository.class
+acme/oddo/data/entities/CustomerEntity.class
+acme/oddo/data/entities/AccountEntity.class
 acme/oddo/controllers/account/CreateAccountController.class
 acme/oddo/AccountsSrvApplication.class
+acme/oddo/data/repositories/CustomerRepository.class
