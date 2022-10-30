@@ -1,6 +1,9 @@
 package acme.oddo.data.repositories;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 import java.math.BigDecimal;
+import java.util.List;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +22,12 @@ public class TransactionRepositoryTest {
     TransactionRepository repository;
 
     @Test
+    public void shouldBeEmpty() {
+        List<TransactionEntity> transactionList = (List<TransactionEntity>) repository.findAll(); 
+        assertThat(transactionList).isEmpty();
+    }
+
+    @Test
     public void itShouldSaveTransaction() {
         TransactionEntity transaction = new TransactionEntity();
         transaction.setAccountID(1);
@@ -26,7 +35,7 @@ public class TransactionRepositoryTest {
         BigDecimal bdFromStringZero = new BigDecimal("0");
         transaction.setDepositValue(bdFromString);
         transaction.setInvoiceValue(bdFromStringZero);
-
-    }
-    
+        transaction = repository.save(transaction);
+        assertThat(transaction).hasFieldOrPropertyWithValue("accountID", 1);            
+    }    
 }

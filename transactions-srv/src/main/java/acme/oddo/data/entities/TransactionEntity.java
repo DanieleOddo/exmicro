@@ -27,29 +27,27 @@ public class TransactionEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "transaction_id")
     private Integer transactionID;
+
     @NonNull
+    @Column(name = "accoaunt_id")
     private Integer accountID; 
 
-    @Column
+    @Column(name = "transaction_dt")
     @CreationTimestamp
-    private LocalDateTime createOn; 
+    private LocalDateTime createOn;
+    
+    @Column(name = "invoice_imp")
     private BigDecimal invoiceValue;
+
+    @Column(name = "deposit_imp")
     private BigDecimal depositValue; 
 
-
     @PrePersist
     @PreUpdate
-    public void invoiceValuetPrecisionConvertion() {
-        // convert your bigdecimal scale to 2 here
+    public void precisionConvertion() {
         this.invoiceValue.setScale(2, RoundingMode.HALF_UP);
-    }
-
-    @PrePersist
-    @PreUpdate
-    public void depositValuetPrecisionConvertion() {
-        // convert your bigdecimal scale to 2 here
         this.depositValue.setScale(2, RoundingMode.HALF_UP);
     }
-
 }
