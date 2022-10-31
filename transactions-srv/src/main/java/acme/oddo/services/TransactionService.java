@@ -4,6 +4,6 @@ import acme.oddo.controllers.transaction.dto.RequestTransactionDTO;
 
 public interface TransactionService {
 
-    public void createTransaction(RequestTransactionDTO request);
+    public String createTransaction(RequestTransactionDTO request);
     
 }

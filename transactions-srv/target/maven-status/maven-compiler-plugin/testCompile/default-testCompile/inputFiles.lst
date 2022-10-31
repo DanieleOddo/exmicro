@@ -1,2 +1,3 @@
 /home/dev/Projects/exmicro/transactions-srv/src/test/java/acme/oddo/controllers/transaction/TransactionControllerTest.java
+/home/dev/Projects/exmicro/transactions-srv/src/test/java/acme/oddo/services/TransactionServiceTest.java
 /home/dev/Projects/exmicro/transactions-srv/src/test/java/acme/oddo/data/repositories/TransactionRepositoryTest.java

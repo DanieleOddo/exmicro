@@ -8,7 +8,10 @@ import org.springframework.stereotype.Service;
 import acme.oddo.controllers.transaction.dto.RequestTransactionDTO;
 import acme.oddo.data.entities.TransactionEntity;
 import acme.oddo.data.repositories.TransactionRepository;
+import acme.oddo.utils.TransactionConst;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Service
 public class TransactionServiceImpl implements TransactionService{
 
@@ -16,16 +19,17 @@ public class TransactionServiceImpl implements TransactionService{
     TransactionRepository repository;
 
     @Override
-    public void createTransaction(RequestTransactionDTO request) {
-        // TODO Auto-generated method stub
+    public String createTransaction(RequestTransactionDTO request) {
+        TransactionEntity entity = new TransactionEntity(); 
         try {
-            TransactionEntity entity = new TransactionEntity(); 
             entity.setAccountID(request.getAccountID());
             entity.setImpValue(BigDecimal.valueOf(request.getImpValue()));
-            entity = repository.save(entity); 
+            entity = repository.save(entity);
+            return TransactionConst.INSERT_OK;  
         } 
         catch (Exception e) {
-            // TODO: handle exception
+            log.error(TransactionConst.GENERIC_ERR, e);
+            return TransactionConst.INSERT_KO;  
         }
     }
     
