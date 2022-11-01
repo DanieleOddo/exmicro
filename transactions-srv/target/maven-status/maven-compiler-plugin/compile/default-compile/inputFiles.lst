@@ -1,0 +1,11 @@
+/home/dev/Projects/exmicro/transactions-srv/src/main/java/acme/oddo/controllers/transaction/dto/RequestTransactionDTO.java
+/home/dev/Projects/exmicro/transactions-srv/src/main/java/acme/oddo/controllers/transaction/TransactionController.java
+/home/dev/Projects/exmicro/transactions-srv/src/main/java/acme/oddo/data/repositories/TransactionRepository.java
+/home/dev/Projects/exmicro/transactions-srv/src/main/java/acme/oddo/services/TransactionService.java
+/home/dev/Projects/exmicro/transactions-srv/src/main/java/acme/oddo/TransactionsSrvApplication.java
+/home/dev/Projects/exmicro/transactions-srv/src/main/java/acme/oddo/controllers/reports/dto/ResponseReportDTO.java
+/home/dev/Projects/exmicro/transactions-srv/src/main/java/acme/oddo/controllers/reports/dto/TransactionDto.java
+/home/dev/Projects/exmicro/transactions-srv/src/main/java/acme/oddo/services/TransactionServiceImpl.java
+/home/dev/Projects/exmicro/transactions-srv/src/main/java/acme/oddo/data/entities/TransactionEntity.java
+/home/dev/Projects/exmicro/transactions-srv/src/main/java/acme/oddo/utils/TransactionConst.java
+/home/dev/Projects/exmicro/transactions-srv/src/main/java/acme/oddo/controllers/reports/ReportController.java
