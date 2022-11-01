@@ -1,4 +1,5 @@
 /home/dev/Projects/exmicro/accounts-srv/src/test/java/acme/oddo/SmokeTest.java
+/home/dev/Projects/exmicro/accounts-srv/src/test/java/acme/oddo/services/CustomerServiceTest.java
 /home/dev/Projects/exmicro/accounts-srv/src/test/java/acme/oddo/data/repositories/CustomerRepositoryTest.java
 /home/dev/Projects/exmicro/accounts-srv/src/test/java/acme/oddo/services/ValidationAccountRequestServiceTest.java
 /home/dev/Projects/exmicro/accounts-srv/src/test/java/acme/oddo/controllers/account/CreateAccountControllerTest.java

@@ -1,12 +1,16 @@
 acme/oddo/services/ValidationAccountRequestServiceImpl.class
+acme/oddo/utils/AccountConst.class
 acme/oddo/controllers/account/dto/RequestAccountDTO.class
 acme/oddo/services/ValidationAccountRequestService.class
+acme/oddo/services/CustomerServiceImpl.class
 acme/oddo/controllers/account/CreateAccountController.class
 acme/oddo/AccountsSrvApplication.class
+acme/oddo/controllers/user/CustomerDTO.class
 acme/oddo/data/repositories/AccountRepository.class
 acme/oddo/data/entities/CustomerEntity.class
 acme/oddo/data/entities/AccountEntity.class
 acme/oddo/controllers/user/UserDTO.class
+acme/oddo/services/CustomerService.class
 acme/oddo/controllers/user/UserController.class
 acme/oddo/data/repositories/CustomerRepository.class
 acme/oddo/controllers/user/ResponseUserDTO.class

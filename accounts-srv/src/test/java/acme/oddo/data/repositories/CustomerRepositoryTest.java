@@ -27,4 +27,5 @@ public class CustomerRepositoryTest {
         customerEntity = entityManager.persistAndFlush(customerEntity);
         assertThat(customerRepository.findByCustomerID(customerEntity.getCustomerID()).getName()).isEqualTo(customerEntity.getName());
     }
+
 }
