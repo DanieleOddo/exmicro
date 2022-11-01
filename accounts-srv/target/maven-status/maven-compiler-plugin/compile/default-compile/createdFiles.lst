@@ -1,4 +1,6 @@
+acme/oddo/services/ValidationAccountRequestServiceImpl.class
 acme/oddo/controllers/account/dto/RequestAccountDTO.class
+acme/oddo/services/ValidationAccountRequestService.class
 acme/oddo/controllers/account/CreateAccountController.class
 acme/oddo/AccountsSrvApplication.class
 acme/oddo/data/repositories/AccountRepository.class

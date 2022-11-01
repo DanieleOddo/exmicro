@@ -37,7 +37,7 @@ public class CreateAccountControllerTest {
 	public void itShouldBeCreateNewAccount() throws Exception {
 		RequestAccountDTO reqs = new RequestAccountDTO();
 		reqs.setCustomerID(5);
-		
+		reqs.setInitialCredit(Double.parseDouble("11.00"));
 		ObjectMapper mapper = new ObjectMapper();
 
 		this.mockMvc.perform(post("/newAccount")
