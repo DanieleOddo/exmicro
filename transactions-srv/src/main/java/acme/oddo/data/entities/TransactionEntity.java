@@ -31,7 +31,7 @@ public class TransactionEntity {
     private Integer transactionID;
 
     @NonNull
-    @Column(name = "accoaunt_id")
+    @Column(name = "account_id")
     private Integer accountID; 
 
     @Column(name = "transaction_dt")
