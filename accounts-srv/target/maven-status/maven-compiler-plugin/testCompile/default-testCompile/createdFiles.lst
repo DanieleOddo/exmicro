@@ -1,5 +1,9 @@
-acme/oddo/data/repositories/CustomerRepositoryTest.class
+acme/oddo/data/repositories/AccountRepositoryTest.class
 acme/oddo/services/CustomerServiceTest.class
-acme/oddo/services/ValidationAccountRequestServiceTest.class
+acme/oddo/controllers/user/UserControllerTest.class
+acme/oddo/services/AccountServiceTest.class
 acme/oddo/SmokeTest.class
 acme/oddo/controllers/account/CreateAccountControllerTest.class
+acme/oddo/data/repositories/CustomerRepositoryTest.class
+acme/oddo/services/ValidationAccountRequestServiceTest.class
+acme/oddo/utils/CheckValidInputTest.class

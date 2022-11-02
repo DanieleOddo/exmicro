@@ -15,24 +15,29 @@ import javax.persistence.Table;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 @Entity(name = "AccountEntity")
-@Table(name = "Account")
+@Table(name = "T_ACCOUNT")
+@Data
+@NoArgsConstructor
 public class AccountEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ACCOUNTID")
     private Integer accountID;
     
     @OneToOne(fetch = FetchType.LAZY)
-    @MapsId
-    @JoinColumn(name = "customerID")
+    @JoinColumn(name = "CUSTOMERID")
     private CustomerEntity customer;
 
-    @Column
+    @Column(name = "CREATE_DATE")
     @CreationTimestamp
     private LocalDateTime createOn;
 
-    @Column
+    @Column(name = "UPDATE_DATE")
     @UpdateTimestamp
     private LocalDateTime updateOn;
 

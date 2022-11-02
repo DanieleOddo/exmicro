@@ -4,8 +4,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -53,11 +51,11 @@ public class CustomerServiceTest {
         customerDTO.setName("TEST");
         customerDTO.setSurname("SURNAMETEST");
         customerService.saveCustomer(customerDTO);
-        assertTrue(customerService.getCustomer(3).getSurname().equals(customerDTO.getSurname()));
+        assertEquals(customerDTO.getSurname(), customerService.getCustomer(3).getSurname());
     }
 
     @Test
     void getCustomerKo() {
-        assertEquals(customerService.getCustomer(999), null);
+        assertEquals(null, customerService.getCustomer(999));
     }
 }

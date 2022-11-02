@@ -3,7 +3,6 @@ package acme.oddo.services;
 import org.springframework.stereotype.Component;
 
 import acme.oddo.controllers.account.dto.RequestAccountDTO;
-import acme.oddo.utils.CheckValidInput;
 
 @Component
 public class ValidationAccountRequestServiceImpl implements ValidationAccountRequestService{

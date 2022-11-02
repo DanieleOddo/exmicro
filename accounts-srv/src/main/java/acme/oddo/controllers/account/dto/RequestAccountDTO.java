@@ -12,7 +12,5 @@ public class RequestAccountDTO implements Serializable {
     
     @NonNull
     private Integer customerID;
-    private String name;
-    private String surname;
     private Double initialCredit; 
 }

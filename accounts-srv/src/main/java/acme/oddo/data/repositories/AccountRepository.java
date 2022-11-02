@@ -6,6 +6,8 @@ import org.springframework.stereotype.Repository;
 import acme.oddo.data.entities.AccountEntity;
 
 @Repository
-public interface AccountRepository extends CrudRepository<AccountEntity, Long> {
+public interface AccountRepository extends CrudRepository<AccountEntity, Integer> {
+
+    public AccountEntity findByAccountID(Integer accountID);  
     
 }

@@ -22,23 +22,23 @@ import lombok.NonNull;
 @Data
 @NoArgsConstructor
 @Entity(name = "TransactionEntity")
-@Table(name = "Transaction")
+@Table(name = "T_TRANSACTION")
 public class TransactionEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "transaction_id")
+    @Column(name = "TRANSACTIONID")
     private Integer transactionID;
 
     @NonNull
-    @Column(name = "account_id")
+    @Column(name = "ACCOUNTID")
     private Integer accountID; 
 
-    @Column(name = "transaction_dt")
+    @Column(name = "CREATE_DATE")
     @CreationTimestamp
     private LocalDateTime createOn;
     
-    @Column(name = "imp_value")
+    @Column(name = "IMP_VALUE")
     private BigDecimal impValue;
 
     @PrePersist

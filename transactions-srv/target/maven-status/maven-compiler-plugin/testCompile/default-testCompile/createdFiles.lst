@@ -1,3 +1,4 @@
 acme/oddo/services/TransactionServiceTest.class
 acme/oddo/controllers/transaction/TransactionControllerTest.class
 acme/oddo/data/repositories/TransactionRepositoryTest.class
+acme/oddo/controllers/reports/ReportControllerTest.class

@@ -23,8 +23,7 @@ public class CreateAccountControllerTest {
     
 	@Test
 	public void itShouldBeBadRequest() throws Exception {
-		RequestAccountDTO reqs = new RequestAccountDTO();
-		reqs.setName("Daniele"); 
+		RequestAccountDTO reqs = new RequestAccountDTO(); 
 		ObjectMapper mapper = new ObjectMapper();
 
 		this.mockMvc.perform(post("/newAccount")

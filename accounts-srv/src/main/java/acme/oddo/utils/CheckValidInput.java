@@ -1,7 +1,5 @@
 package acme.oddo.utils;
 
-import org.springframework.stereotype.Controller;
-
 public class CheckValidInput {
     
 
@@ -10,7 +8,7 @@ public class CheckValidInput {
             return false;
         }
         try {
-            Integer d = Integer.parseInt(strNum);
+            Integer.parseInt(strNum);
         } catch (NumberFormatException nfe) {
             return false;
         }

@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: acme.oddo.services.TransactionServiceTest
--------------------------------------------------------------------------------
-Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.628 s - in acme.oddo.services.TransactionServiceTest

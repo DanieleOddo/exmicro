@@ -16,26 +16,27 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity(name = "CustomerEntity")
-@Table(name = "Customer")
+@Table(name = "T_CUSTOMER")
 @Data
 @NoArgsConstructor
 public class CustomerEntity {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "CUSTOMERID")
     private Integer customerID;
     
-    @Column(nullable = false)
+    @Column(name = "NAME", nullable = false)
     private String name;
     
-    @Column(nullable = false)
+    @Column(name = "SURNAME", nullable = false)
     private String surname;
 
-    @Column
+    @Column(name = " CREATE_DATE")
     @CreationTimestamp
     private LocalDateTime createOn;
 
-    @Column
+    @Column(name = "UPDATE_DATE")
     @UpdateTimestamp
     private LocalDateTime updateOn;
 }

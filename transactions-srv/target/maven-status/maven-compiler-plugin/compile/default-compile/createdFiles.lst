@@ -2,6 +2,7 @@ acme/oddo/TransactionsSrvApplication.class
 acme/oddo/controllers/transaction/dto/RequestTransactionDTO.class
 acme/oddo/controllers/transaction/TransactionController.class
 acme/oddo/services/TransactionService.class
+acme/oddo/controllers/reports/dto/ResponseReportDTO.class
 acme/oddo/data/repositories/TransactionRepository.class
 acme/oddo/services/TransactionServiceImpl.class
 acme/oddo/data/entities/TransactionEntity.class
