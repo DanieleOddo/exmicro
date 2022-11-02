@@ -3,7 +3,7 @@ package acme.oddo.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import acme.oddo.controllers.user.CustomerDTO;
+import acme.oddo.controllers.user.dto.CustomerDTO;
 import acme.oddo.data.entities.CustomerEntity;
 import acme.oddo.data.repositories.CustomerRepository;
 import acme.oddo.utils.AccountConst;
@@ -33,8 +33,20 @@ public class CustomerServiceImpl implements CustomerService{
 
     @Override
     public CustomerDTO getCustomer(Integer customerID) {
-        // TODO Auto-generated method stub
-        return null;
+        try {
+            CustomerEntity customer = repository.findByCustomerID(customerID);
+            CustomerDTO customerResponse = new CustomerDTO();
+            if (customer != null) {
+                customerResponse.setCustomerID(customerID);
+                customerResponse.setName(customer.getName());
+                customerResponse.setSurname(customer.getSurname());
+                return customerResponse;
+            }    
+            return customerResponse; 
+        } catch (Exception e) {
+            log.error(AccountConst.ERRMSG, e.toString());   
+            return null;
+        }
     }
 
     @Override

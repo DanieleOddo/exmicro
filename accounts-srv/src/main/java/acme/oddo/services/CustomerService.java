@@ -1,6 +1,6 @@
 package acme.oddo.services;
 
-import acme.oddo.controllers.user.CustomerDTO;
+import acme.oddo.controllers.user.dto.CustomerDTO;
 
 public interface CustomerService {
     

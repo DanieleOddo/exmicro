@@ -1,14 +1,15 @@
 package acme.oddo.services;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import acme.oddo.controllers.user.CustomerDTO;
-import acme.oddo.data.entities.CustomerEntity;
+import acme.oddo.controllers.user.dto.CustomerDTO;
 
 @SpringBootTest
 public class CustomerServiceTest {
@@ -37,7 +38,7 @@ public class CustomerServiceTest {
         customerDTO.setName("TEST");
         customerDTO.setSurname("SURNAMETEST");
         customerService.saveCustomer(customerDTO);
-        assertTrue(customerService.isCustomerPresent(1));
+        assertTrue(customerService.isCustomerPresent(3));
     }
 
     @Test
@@ -45,4 +46,18 @@ public class CustomerServiceTest {
         assertFalse(customerService.isCustomerPresent(9999));
     }
     
+    @Test
+    void getCustomer() {
+
+        CustomerDTO customerDTO = new CustomerDTO(); 
+        customerDTO.setName("TEST");
+        customerDTO.setSurname("SURNAMETEST");
+        customerService.saveCustomer(customerDTO);
+        assertTrue(customerService.getCustomer(3).getSurname().equals(customerDTO.getSurname()));
+    }
+
+    @Test
+    void getCustomerKo() {
+        assertEquals(customerService.getCustomer(999), null);
+    }
 }

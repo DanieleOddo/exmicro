@@ -1,25 +1,20 @@
-2022-11-01 18:49:18,509 INFO o.s.b.StartupInfoLogger [main] Starting CustomerServiceTest using Java 11.0.16 on dev with PID 5901 (started by dev in /home/dev/Projects/exmicro/accounts-srv)
-2022-11-01 18:49:18,520 DEBUG o.s.b.StartupInfoLogger [main] Running with Spring Boot v2.7.5, Spring v5.3.23
-2022-11-01 18:49:18,522 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
-2022-11-01 18:49:19,371 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-11-01 18:49:19,459 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 73 ms. Found 2 JPA repository interfaces.
-2022-11-01 18:49:19,973 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
-2022-11-01 18:49:20,218 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
-2022-11-01 18:49:20,303 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-11-01 18:49:20,383 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.12.Final
-2022-11-01 18:49:20,565 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-11-01 18:49:20,698 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2022-11-01 18:49:21,336 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-11-01 18:49:21,343 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-11-01 18:49:22,144 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-11-01 18:49:22,451 INFO o.s.b.a.h.H2ConsoleAutoConfiguration [main] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:accountdb'
-2022-11-01 18:49:23,512 INFO o.s.b.StartupInfoLogger [main] Started CustomerServiceTest in 5.415 seconds (JVM running for 6.536)
-2022-11-01 18:49:23,810 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-11-01 18:49:23,812 INFO o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl [SpringApplicationShutdownHook] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
-2022-11-01 18:49:23,817 WARN o.h.e.j.s.SqlExceptionHelper [SpringApplicationShutdownHook] SQL Error: 90121, SQLState: 90121
-2022-11-01 18:49:23,817 ERROR o.h.e.j.s.SqlExceptionHelper [SpringApplicationShutdownHook] Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
-2022-11-01 18:49:23,819 WARN o.h.e.j.s.SqlExceptionHelper [SpringApplicationShutdownHook] SQL Error: 90121, SQLState: 90121
-2022-11-01 18:49:23,820 ERROR o.h.e.j.s.SqlExceptionHelper [SpringApplicationShutdownHook] Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
-2022-11-01 18:49:23,821 WARN o.s.b.f.s.DisposableBeanAdapter [SpringApplicationShutdownHook] Invocation of destroy method failed on bean with name 'entityManagerFactory': org.hibernate.exception.JDBCConnectionException: Unable to release JDBC Connection used for DDL execution
-2022-11-01 18:49:23,822 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
-2022-11-01 18:49:23,832 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-11-02 09:08:34,169 INFO o.s.b.StartupInfoLogger [main] Starting CustomerServiceTest using Java 11.0.16 on dev with PID 10646 (started by dev in /home/dev/Projects/exmicro/accounts-srv)
+2022-11-02 09:08:34,181 DEBUG o.s.b.StartupInfoLogger [main] Running with Spring Boot v2.7.5, Spring v5.3.23
+2022-11-02 09:08:34,185 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-11-02 09:08:34,980 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-02 09:08:35,052 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 62 ms. Found 2 JPA repository interfaces.
+2022-11-02 09:08:35,509 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2022-11-02 09:08:35,720 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-11-02 09:08:35,787 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-02 09:08:35,855 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-02 09:08:36,057 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-02 09:08:36,178 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-11-02 09:08:36,798 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-02 09:08:36,808 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-02 09:08:37,523 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-02 09:08:37,818 INFO o.s.b.a.h.H2ConsoleAutoConfiguration [main] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:accountdb'
+2022-11-02 09:08:38,937 INFO o.s.b.StartupInfoLogger [main] Started CustomerServiceTest in 5.221 seconds (JVM running for 6.299)
+2022-11-02 09:08:39,409 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-02 09:08:39,411 INFO o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl [SpringApplicationShutdownHook] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-11-02 09:08:39,421 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-11-02 09:08:39,430 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
