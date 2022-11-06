@@ -24,9 +24,6 @@ public class CreateAccountController {
 
 	@Autowired
 	AccountService accountService;
-
-    // @PostMapping("/V1/newAccount/")
-	// public ResponseEntity<ResponseAccountDto> newAccount(@RequestParam(name = "customerID") Integer customerID, @RequestParam(name = "initialCredit") String initialCredit) {
 		 @PostMapping("/V1/newAccount/customer/{customerID}/initCredit/{initialCredit}")
 		 public ResponseEntity<ResponseAccountDto> newAccount(@PathVariable Integer customerID, @PathVariable String initialCredit) {
 
