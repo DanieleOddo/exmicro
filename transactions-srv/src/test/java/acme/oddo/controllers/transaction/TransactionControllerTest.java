@@ -1,6 +1,6 @@
 package acme.oddo.controllers.transaction;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import org.junit.jupiter.api.Test;
@@ -9,8 +9,8 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 
 import acme.oddo.controllers.transaction.dto.RequestTransactionDTO;
 
@@ -28,12 +28,14 @@ public class TransactionControllerTest {
 
         RequestTransactionDTO request = new RequestTransactionDTO();
         request.setAccountID(1);
-        request.setImpValue(Double.parseDouble("10.00"));
+        request.setCustomerID(2);
+        request.setImpValue(10.00);
         ObjectMapper mapper = new ObjectMapper();
-
-        this.mvc.perform(put("/newTransaction")
-            .param("input", mapper.writeValueAsString(request))
-            .contentType(MediaType.APPLICATION_JSON))
+        mapper.configure(SerializationFeature.WRAP_ROOT_VALUE, false);
+        String requestStr = mapper.writeValueAsString(request); 
+        this.mvc.perform(post("/V1/newTransaction")
+            .content(requestStr)
+            .contentType(MediaType.APPLICATION_JSON))            
             .andExpect(status().isOk());
 
     }
@@ -42,11 +44,13 @@ public class TransactionControllerTest {
     void itShouldBeBadRequest() throws Exception {
 
         RequestTransactionDTO request = new RequestTransactionDTO();
-        request.setImpValue(Double.parseDouble("10.00"));
+        request.setAccountID(2);
+        request.setImpValue(10.00);
         ObjectMapper mapper = new ObjectMapper();
-
-        this.mvc.perform(put("/newTransaction")
-            .param("input", mapper.writeValueAsString(request))
+        mapper.configure(SerializationFeature.WRAP_ROOT_VALUE, false);
+        String requestStr = mapper.writeValueAsString(request); 
+        this.mvc.perform(post("/V1/newTransaction")
+            .content(requestStr)
             .contentType(MediaType.APPLICATION_JSON))
             .andExpect(status().isBadRequest());
     }

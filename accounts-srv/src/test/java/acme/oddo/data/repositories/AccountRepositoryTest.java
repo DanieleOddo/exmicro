@@ -1,8 +1,11 @@
 package acme.oddo.data.repositories;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.util.List;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,17 +33,29 @@ public class AccountRepositoryTest {
         AccountEntity accountEntity = new AccountEntity();
         accountEntity.setCustomer(customer);
         accountRepository.save(accountEntity); 
-        assertEquals(customer, accountRepository.findByAccountID(1).getCustomer());
+        assertEquals(customer, accountRepository.findByAccountIDAndCustomer_CustomerID(accountEntity.getAccountID(), 1).getCustomer());
     }
 
     @Test
     void itSchouldNotFound() {
-        assertEquals(null,  accountRepository.findByAccountID(99));
+        assertEquals(null,  accountRepository.findByAccountIDAndCustomer_CustomerID(99,99));
     }
  
     @Test
     void itSchouldBeFound() {
-        assertNotNull(accountRepository.findByAccountID(1));
+        assertNotNull(accountRepository.findByAccountIDAndCustomer_CustomerID(1,2));
+    }
+
+    @Test
+    void listAccount() {
+        List<AccountEntity> listAccount = accountRepository.findAllByCustomer_CustomerID(2);
+        assertFalse(listAccount.isEmpty());
+    }
+
+    @Test
+    void listEmpty() {
+        List<AccountEntity> listAccount = accountRepository.findAllByCustomer_CustomerID(99);
+        assertTrue(listAccount.isEmpty());
     }
  
 }

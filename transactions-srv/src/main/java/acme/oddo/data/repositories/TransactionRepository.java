@@ -15,9 +15,9 @@ public interface TransactionRepository extends CrudRepository<TransactionEntity,
 
 
     //  I'm going to use a Native query!
-    @Query(value = "SELECT SUM(IMP_VALUE) FROM T_TRANSACION WHERE ACCOUNTID = :accountID", nativeQuery = true)
-    public BigDecimal findByAccountID(@Param ("accountID") Integer accountID);
+    @Query(value = "SELECT SUM(IMP_VALUE) FROM T_TRANSACTION WHERE CUSTOMERID = :customerID AND ACCOUNTID = :accountID" , nativeQuery = true)
+    public BigDecimal findByCustomerIDAndAccountID(@Param ("customerID") Integer customerID, @Param ("accountID") Integer accountID);
 
-    public List<TransactionEntity> findAllByAccountID(Integer accountID);    
+    public List<TransactionEntity> findAllByCustomerIDAndAccountID(Integer customerID, Integer accountID);    
     
 }

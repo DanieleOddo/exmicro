@@ -11,9 +11,15 @@ import lombok.NonNull;
 public class TransactionDto implements Serializable {
 
     @NonNull
+    Integer customerID; 
+    
+    @NonNull
+    Integer accountID;
+
+    @NonNull
     LocalDate transactionDate;
 
     @NonNull
     Double impValue;
-      
+
 }

@@ -30,6 +30,9 @@ public class TransactionEntity {
     @Column(name = "TRANSACTIONID")
     private Integer transactionID;
 
+    @Column(name = "CUSTOMERID")
+    private Integer customerID; 
+
     @NonNull
     @Column(name = "ACCOUNTID")
     private Integer accountID; 

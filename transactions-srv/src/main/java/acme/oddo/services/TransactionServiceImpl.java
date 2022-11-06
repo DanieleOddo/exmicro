@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 
 import acme.oddo.controllers.reports.dto.TransactionDto;
 import acme.oddo.controllers.transaction.dto.RequestTransactionDTO;
+import acme.oddo.controllers.transaction.dto.ResponseTransactionDto;
 import acme.oddo.data.entities.TransactionEntity;
 import acme.oddo.data.repositories.TransactionRepository;
 import acme.oddo.utils.TransactionConst;
@@ -22,45 +23,53 @@ public class TransactionServiceImpl implements TransactionService{
     TransactionRepository repository;
 
     @Override
-    public String createTransaction(RequestTransactionDTO request) {
-        TransactionEntity entity = new TransactionEntity(); 
+    public ResponseTransactionDto createTransaction(RequestTransactionDTO request) {
+        ResponseTransactionDto dto = new ResponseTransactionDto(); 
         try {
-            entity.setAccountID(request.getAccountID());
-            entity.setImpValue(BigDecimal.valueOf(request.getImpValue()));
-            repository.save(entity);
-            return TransactionConst.INSERT_OK;  
+            TransactionEntity transactionEntity = new TransactionEntity(); 
+            transactionEntity.setCustomerID(request.getCustomerID());
+            transactionEntity.setAccountID(request.getAccountID());
+            transactionEntity.setImpValue(BigDecimal.valueOf(request.getImpValue()));
+            transactionEntity = repository.save(transactionEntity);
+            dto.setCustomerID(transactionEntity.getCustomerID());
+            dto.setAccountID(transactionEntity.getAccountID());
+            dto.setImpValue(transactionEntity.getImpValue().doubleValue());
+            dto.setTransactionDate(transactionEntity.getCreateOn().toLocalDate());
+            return dto;  
         } 
         catch (Exception e) {
-            log.error(TransactionConst.GENERIC_ERR, e.toString());
-            return TransactionConst.INSERT_KO;  
+            log.error(TransactionConst.GENERIC_ERR_1, e.getMessage(), e.getCause());
+            return dto;  
         }
     }
 
     @Override
-    public Double getBalanceByAccount(Integer accountID) {
+    public Double getBalanceByCustomerAndAccount(Integer customerID, Integer accountID) {
         try {
-            BigDecimal balance = repository.findByAccountID(accountID);
+            BigDecimal balance = repository.findByCustomerIDAndAccountID(customerID, accountID);
             return balance.doubleValue();
         } catch (Exception e) {
-            log.error(TransactionConst.GENERIC_ERR, e.toString());
+            log.error(TransactionConst.GENERIC_ERR_1, e.getMessage(), e.getCause());
             return Double.NaN;
         }
     }
 
     @Override
-    public List<TransactionDto> getAllTransactionByAccount(Integer accountID) {
+    public List<TransactionDto> getAllTransactionByCustomerAndAccount(Integer customerID, Integer accountID) {
         List<TransactionDto> resultList = new ArrayList<>();  
         try {
-            List<TransactionEntity> lEntities = repository.findAllByAccountID(accountID);
+            List<TransactionEntity> lEntities = repository.findAllByCustomerIDAndAccountID(customerID, accountID);
             for (TransactionEntity transactionEntity : lEntities) {
                 TransactionDto transactionDto = new TransactionDto();
+                transactionDto.setAccountID(transactionEntity.getAccountID());
+                transactionDto.setCustomerID(transactionEntity.getCustomerID());
                 transactionDto.setTransactionDate(transactionEntity.getCreateOn().toLocalDate());
                 transactionDto.setImpValue(transactionEntity.getImpValue().doubleValue());
                 resultList.add(transactionDto); 
             }
             return resultList; 
         } catch (Exception e) {
-            log.error(TransactionConst.GENERIC_ERR, e.toString());
+            log.error(TransactionConst.GENERIC_ERR_1, e.getMessage(), e.getCause());
             return resultList; 
         }
     }

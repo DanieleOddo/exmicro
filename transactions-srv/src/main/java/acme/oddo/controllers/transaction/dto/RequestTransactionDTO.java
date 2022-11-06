@@ -9,6 +9,8 @@ import lombok.NonNull;
 public class RequestTransactionDTO {
     
     @NonNull
+    private Integer customerID;
+    @NonNull
     private Integer accountID;
     @NonNull
     private Double impValue; 

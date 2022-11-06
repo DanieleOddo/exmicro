@@ -5,6 +5,7 @@ acme/oddo/services/TransactionService.class
 acme/oddo/controllers/reports/dto/ResponseReportDTO.class
 acme/oddo/data/repositories/TransactionRepository.class
 acme/oddo/services/TransactionServiceImpl.class
+acme/oddo/controllers/transaction/dto/ResponseTransactionDto.class
 acme/oddo/data/entities/TransactionEntity.class
 acme/oddo/controllers/reports/ReportController.class
 acme/oddo/utils/TransactionConst.class

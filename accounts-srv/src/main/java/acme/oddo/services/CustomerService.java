@@ -1,12 +1,12 @@
 package acme.oddo.services;
 
-import acme.oddo.controllers.user.dto.CustomerDTO;
+import acme.oddo.controllers.user.dto.CustomerDto;
 
 public interface CustomerService {
     
     public boolean isCustomerPresent(Integer customerID); 
 
-    public CustomerDTO getCustomer(Integer customerID); 
+    public CustomerDto getCustomer(Integer customerID); 
 
-    public boolean saveCustomer(CustomerDTO customerDTO); 
+    public boolean saveCustomer(CustomerDto customerDTO); 
 }

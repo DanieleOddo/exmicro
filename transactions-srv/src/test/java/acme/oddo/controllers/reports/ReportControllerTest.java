@@ -5,7 +5,6 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-
 import acme.oddo.controllers.transaction.dto.RequestTransactionDTO;
 import acme.oddo.services.TransactionService;
 
@@ -28,8 +27,15 @@ public class ReportControllerTest {
     @Test
     void itShouldBeReportBadRequest() throws Exception {
 
-        this.mvc.perform(get("/reportAccount")
-            .param("account", "10")
+        this.mvc.perform(get("/V1/infoAccount/customer/{customerID}/account/{accountID}", "2", "10")
+            .contentType(MediaType.APPLICATION_JSON))
+            .andExpect(status().isBadRequest());
+    }
+
+    @Test
+    void itShouldBeReportBadRequest2() throws Exception {
+
+        this.mvc.perform(get("/V1/infoAccount/customer/{customerID}/account/{accountID}", "q", "10")
             .contentType(MediaType.APPLICATION_JSON))
             .andExpect(status().isBadRequest());
     }
@@ -38,17 +44,18 @@ public class ReportControllerTest {
     void getReport() throws Exception {
 
         RequestTransactionDTO re1 = new RequestTransactionDTO();
+        re1.setCustomerID(41);
         re1.setAccountID(1);
         re1.setImpValue(Double.parseDouble("10.00"));
         transactionService.createTransaction(re1);
 
         RequestTransactionDTO re2 = new RequestTransactionDTO();
+        re2.setCustomerID(41);
         re2.setAccountID(1);
         re2.setImpValue(Double.parseDouble("10.00"));
         transactionService.createTransaction(re2);
-        
-        this.mvc.perform(get("/reportAccount")
-            .param("account", "1")
+
+        this.mvc.perform(get("/V1/infoAccount/customer/{customerID}/account/{accountID}", "41", "1")
             .contentType(MediaType.APPLICATION_JSON))
             .andExpect(status().isOk());
     }

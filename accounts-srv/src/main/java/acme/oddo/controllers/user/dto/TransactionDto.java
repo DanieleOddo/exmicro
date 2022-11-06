@@ -11,9 +11,16 @@ import lombok.NonNull;
 public class TransactionDto {
 
     @NonNull
+    Integer customerID; 
+    
+    @NonNull
+    Integer accountID;
+
+    @NonNull
     LocalDate transactionDate;
 
     @NonNull
     Double impValue;
+
     
 }

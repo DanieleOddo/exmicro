@@ -3,7 +3,7 @@ package acme.oddo.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import acme.oddo.controllers.user.dto.CustomerDTO;
+import acme.oddo.controllers.user.dto.CustomerDto;
 import acme.oddo.data.entities.CustomerEntity;
 import acme.oddo.data.repositories.CustomerRepository;
 import acme.oddo.utils.AccountConst;
@@ -25,17 +25,17 @@ public class CustomerServiceImpl implements CustomerService{
             }
             return false;
         } catch (Exception e) {
-            log.error(AccountConst.ERRMSG, e.toString());   
+            log.error(AccountConst.ERRMSG, e.getMessage());   
             return false;
         }
         
     }
 
     @Override
-    public CustomerDTO getCustomer(Integer customerID) {
+    public CustomerDto getCustomer(Integer customerID) {
         try {
             CustomerEntity customer = repository.findByCustomerID(customerID);
-            CustomerDTO customerResponse = new CustomerDTO();
+            CustomerDto customerResponse = new CustomerDto();
             if (customer != null) {
                 customerResponse.setCustomerID(customerID);
                 customerResponse.setName(customer.getName());
@@ -44,13 +44,13 @@ public class CustomerServiceImpl implements CustomerService{
             }    
             return customerResponse; 
         } catch (Exception e) {
-            log.error(AccountConst.ERRMSG, e.toString());   
+            log.error(AccountConst.ERRMSG, e.getMessage());   
             return null;
         }
     }
 
     @Override
-    public boolean saveCustomer(CustomerDTO customerDTO) {
+    public boolean saveCustomer(CustomerDto customerDTO) {
         try {
             CustomerEntity customer = new CustomerEntity();
             if ((customerDTO.getName() != null) && (customerDTO.getSurname() != null)) {
@@ -61,7 +61,7 @@ public class CustomerServiceImpl implements CustomerService{
             }  
             return false;     
         } catch (Exception e) {
-            log.error(AccountConst.ERRMSG, e.toString());   
+            log.error(AccountConst.ERRMSG, e.getMessage());   
             return false;
         }
     }

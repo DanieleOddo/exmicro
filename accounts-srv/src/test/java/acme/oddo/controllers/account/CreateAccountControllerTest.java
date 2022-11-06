@@ -10,10 +10,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import acme.oddo.controllers.account.dto.RequestAccountDTO;
-
 @SpringBootTest
 @AutoConfigureMockMvc
 public class CreateAccountControllerTest {
@@ -23,27 +19,18 @@ public class CreateAccountControllerTest {
     
 	@Test
 	public void itShouldBeBadRequest() throws Exception {
-		RequestAccountDTO reqs = new RequestAccountDTO(); 
-		ObjectMapper mapper = new ObjectMapper();
-
-		this.mockMvc.perform(post("/newAccount")
-			.param("input", mapper.writeValueAsString(reqs))
+		this.mockMvc.perform(post("/V1/newAccount/customer/{customerID}/initCredit/{initialCredit}", 10, "12.34")
 			.contentType(MediaType.APPLICATION_JSON))
 			.andExpect(status().isBadRequest());
 	}
 
+	// Test Valid only if Both Services (accountSrv & transactionSrv) are runnig
+	/*
 	@Test
 	public void itShouldBeCreateNewAccount() throws Exception {
-		RequestAccountDTO reqs = new RequestAccountDTO();
-		reqs.setCustomerID(5);
-		reqs.setInitialCredit(Double.parseDouble("11.00"));
-		ObjectMapper mapper = new ObjectMapper();
-
-		this.mockMvc.perform(post("/newAccount")
-			.param("input", mapper.writeValueAsString(reqs))
+		this.mockMvc.perform(post("/V1/newAccount/customer/{customerID}/initCredit/{initCredit}", 2, "99")
 			.contentType(MediaType.APPLICATION_JSON))
 			.andExpect(status().isOk());
 	}
-
-
+	 */
 }

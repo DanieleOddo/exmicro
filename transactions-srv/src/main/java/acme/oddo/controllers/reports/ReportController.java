@@ -2,20 +2,17 @@ package acme.oddo.controllers.reports;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import acme.oddo.controllers.reports.dto.ResponseReportDTO;
+import acme.oddo.controllers.reports.dto.TransactionDto;
 import acme.oddo.services.TransactionService;
 import acme.oddo.utils.TransactionConst;
 import lombok.extern.slf4j.Slf4j;
-import acme.oddo.controllers.reports.dto.ResponseReportDTO;
-import acme.oddo.controllers.reports.dto.TransactionDto;
 
 @Slf4j
 @RestController
@@ -23,39 +20,43 @@ public class ReportController {
     @Autowired
     TransactionService transactionService;
 
-    @GetMapping("/reportAccount")
-    @ResponseBody
-    public ResponseEntity<ResponseReportDTO> getReportByAccount(@RequestParam String account) {
+    @GetMapping("/V1/infoAccount/customer/{customerID}/account/{accountID}")
+    public ResponseEntity<ResponseReportDTO> getReportByAccount(@PathVariable Integer customerID, @PathVariable Integer accountID) {
         ResponseReportDTO respo = new ResponseReportDTO();
         try {
-            List<TransactionDto> listTransaction = getTransactionByAccount(Integer.valueOf(account));
+            List<TransactionDto> listTransaction = getTransactionByCustomerAndAccount(customerID, accountID);
             if (listTransaction.isEmpty()) {
-                return new ResponseEntity<>(respo, HttpStatus.BAD_REQUEST);    
+                return ResponseEntity.badRequest().body(null); 
             }
             respo.setLDtos(listTransaction);
-            respo.setBalance(getBalance(Integer.valueOf(account)));
-            return new ResponseEntity<>(respo, HttpStatus.OK);
+            Double value = getBalance(customerID, accountID);
+            if (!value.isNaN()) {
+                respo.setBalance(value);
+            } else {
+                respo.setBalance(Double.valueOf(0));
+            }
+            return ResponseEntity.ok().body(respo);
         } catch (Exception e) {
-            log.error(TransactionConst.ERRNSG, e.toString());
-            return new ResponseEntity<>(respo, HttpStatus.BAD_REQUEST);
+            log.error(TransactionConst.ERRNSG, e.getMessage());
+            return ResponseEntity.badRequest().body(null);
         }
     }
 
 
-    private Double getBalance(Integer account) {
+    private Double getBalance(Integer customer, Integer account) {
         try {
-            return transactionService.getBalanceByAccount(account);
+            return transactionService.getBalanceByCustomerAndAccount(customer, account);
         } catch (Exception e) {
-            log.error(TransactionConst.ERRNSG, e.toString());
+            log.error(TransactionConst.ERRNSG, e.getMessage());
             return Double.NaN;
         }
     }
 
-    private List<TransactionDto> getTransactionByAccount(Integer account) {
+    private List<TransactionDto> getTransactionByCustomerAndAccount(Integer customer, Integer account) {
         try {
-            return transactionService.getAllTransactionByAccount(account);
+            return transactionService.getAllTransactionByCustomerAndAccount(customer, account);
         } catch (Exception e) {
-            log.error(TransactionConst.ERRNSG, e.toString());
+            log.error(TransactionConst.ERRNSG, e.getMessage());
             return new ArrayList<>();
         }
     }

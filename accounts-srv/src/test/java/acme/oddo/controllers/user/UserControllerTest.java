@@ -21,19 +21,18 @@ public class UserControllerTest {
 
     @Test
 	public void itShouldBeBadRequest() throws Exception {
-        this.mockMvc.perform(get("/userInfo")
-        .param("account", "q")
+        this.mockMvc.perform(get("/V1/customerInfo/customer/{customerID}/account/{accountID}", 41, 1)
         .contentType(MediaType.APPLICATION_JSON))
         .andExpect(status().isBadRequest());  
 	}
 
+    // Test to execute only with transactionSrv up & runnig
+    /*
     @Test
 	public void itShouldBeOK() throws Exception {
-        this.mockMvc.perform(get("/userInfo")
-        .param("account", "1")
+        this.mockMvc.perform(get("/V1/customerInfo/customer/{customerID}/account/{accountID}", 2, 1)
         .contentType(MediaType.APPLICATION_JSON))
         .andExpect(status().isOk());  
 	}
-
-
+     */
 }

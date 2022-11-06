@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import acme.oddo.controllers.user.dto.CustomerDTO;
+import acme.oddo.controllers.user.dto.CustomerDto;
 
 @SpringBootTest
 public class CustomerServiceTest {
@@ -17,7 +17,7 @@ public class CustomerServiceTest {
 
     @Test 
     void saveCustomer() {
-        CustomerDTO customerDTO = new CustomerDTO(); 
+        CustomerDto customerDTO = new CustomerDto(); 
         customerDTO.setName("TEST");
         customerDTO.setSurname("SURNAMETEST");
         assertTrue(customerService.saveCustomer(customerDTO));
@@ -25,14 +25,14 @@ public class CustomerServiceTest {
 
     @Test 
     void saveCustomerKo() {
-        CustomerDTO customerDTO = new CustomerDTO(); 
+        CustomerDto customerDTO = new CustomerDto(); 
         customerDTO.setSurname("SURNAMETEST");
         assertFalse(customerService.saveCustomer(customerDTO));
     }
 
     @Test
     void isCustomerPresent() {
-        CustomerDTO customerDTO = new CustomerDTO(); 
+        CustomerDto customerDTO = new CustomerDto(); 
         customerDTO.setName("TEST");
         customerDTO.setSurname("SURNAMETEST");
         customerService.saveCustomer(customerDTO);
@@ -47,7 +47,7 @@ public class CustomerServiceTest {
     @Test
     void getCustomer() {
 
-        CustomerDTO customerDTO = new CustomerDTO(); 
+        CustomerDto customerDTO = new CustomerDto(); 
         customerDTO.setName("TEST");
         customerDTO.setSurname("SURNAMETEST");
         customerService.saveCustomer(customerDTO);
@@ -56,6 +56,6 @@ public class CustomerServiceTest {
 
     @Test
     void getCustomerKo() {
-        assertEquals(null, customerService.getCustomer(999));
+        assertEquals(null, customerService.getCustomer(999).getName());
     }
 }

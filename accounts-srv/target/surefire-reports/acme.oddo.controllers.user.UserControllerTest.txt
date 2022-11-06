@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: acme.oddo.controllers.user.UserControllerTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.124 s <<< FAILURE! - in acme.oddo.controllers.user.UserControllerTest
+itShouldBeBadRequest  Time elapsed: 0.018 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<400> but was:<200>
+	at acme.oddo.controllers.user.UserControllerTest.itShouldBeBadRequest(UserControllerTest.java:27)
+
